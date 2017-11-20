@@ -24,7 +24,7 @@ var leftPressed = false;
 
 // Brick variables
 var brickRowCount = 3;
-var brickColumnCount = 1;
+var brickColumnCount = 5;
 var brickWidth = 75;
 var brickHeight = 20;
 var brickPadding = 10;
@@ -35,6 +35,7 @@ var bricksRemaining = brickRowCount * brickColumnCount;
 
 var bricks;
 
+// Reset game properties
 function reset() {
     x = canvas.width / 2;
     y = canvas.height - 30;
@@ -98,6 +99,7 @@ function drawBricks() {
     }
 }
 
+// Check if all bricks have been destroyed
 function updateAndCheckGameStatus() {
     bricksRemaining--;
     if (bricksRemaining === 0) {
@@ -146,8 +148,8 @@ function draw() {
             y -= paddleHeight;
             dy = -dy;
         } else {
-            //alert('GAME OVER!!');
-            //reset();
+            alert('GAME OVER!!');
+            reset();
         }
     }
 
